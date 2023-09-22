@@ -32,8 +32,6 @@ The code works 99% now, but I need some help with the last 1% !!!
 The device is successfully joining the network, interviewed and is paired. But when ZigBee2MQTT tries to configure, the device times out - see below from the ZigBee2MQTT log:
 
 ```
-info  2023-09-17 20:53:40: Configuring '0x00124b00279e698d'
-
 error 2023-09-17 20:54:04: Failed to configure '0x00124b00279e698d', attempt 2 (Error: ConfigureReporting 0x00124b00279e698d/1 genOnOff([{"attribute":"onOff","minimumReportInterval":0,
 "maximumReportInterval":3600,"reportableChange":0}],"sendWhen":"immediate","timeout":10000,"disableResponse":false,"disableRecovery":false,"disableDefaultResponse":true,"direction":0,"srcEndpoint":null,"reservedBits":0,"manufacturerCode":null,
 "transactionSequenceNumber":null,"writeUndiv":false})failed (Timeout - 64357 - 1 - 15 - 6 - 7 after 10000ms)
