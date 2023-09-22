@@ -29,7 +29,7 @@ https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.h
 
 The code works 99% now, but I need some help with the last 1% !!!
 
-The device is successfully joining the network, interviewed and is paired. But when ZigBee2MQTT tries to configure, the device times out - see below from the ZigBee2MQTT log:
+The device is successfully joining the network, interviewed and is paired. But when ZigBee2MQTT tries to configure, the device times out - see below from the zigbee-herdsman-error-log.txt log:
 
 ```
 error 2023-09-17 20:54:04: Failed to configure '0x00124b00279e698d', attempt 2 (Error: ConfigureReporting 0x00124b00279e698d/1 genOnOff([{"attribute":"onOff","minimumReportInterval":0,
