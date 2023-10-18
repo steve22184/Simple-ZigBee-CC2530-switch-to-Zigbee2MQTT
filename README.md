@@ -39,6 +39,11 @@ error 2023-09-17 20:54:04: Failed to configure '0x00124b00279e698d', attempt 2 (
     at listOnTimeout (node:internal/timers:559:17)
     at processTimers (node:internal/timers:502:7))
 ```
+I also get this error message:
+```
+Zigbee2MQTT:debug 2023-10-18 20:00:32: Received Zigbee message from '0x00124b00279e698d', type 'commandToggle', cluster 'genOnOff', data '{}' from endpoint 1 with groupID 0
+Zigbee2MQTT:debug 2023-10-18 20:00:32: No converter available for 'Test' with cluster 'genOnOff' and type 'commandToggle' and data '{}'
+```
 
 I am not sure where the problem is. It could be the Converter file that are not right, it could be some final configuration of ZigBee2MQTT that I missed, and finally the ZigBee code itself.
 
