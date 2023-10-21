@@ -440,11 +440,21 @@ static void zclGenericApp_HandleKeys( byte shift, byte keys )
   }
   if ( keys & HAL_KEY_SW_6 )
   {
-    HAL_TOGGLE_LED1();
   // Send switch toggle command
-    zclGeneral_SendOnOff_CmdToggle( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    //zclGeneral_SendOnOff_CmdToggle( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+  // Send an On Off Command - COMMAND_ONOFF_ON
+    HAL_TURN_ON_LED1();
+    zclGeneral_SendOnOff_CmdOn( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
   }  
- }
+  if ( keys & HAL_KEY_SW_5 )
+  {
+  // Send switch toggle command
+    //zclGeneral_SendOnOff_CmdToggle( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+  // Send an On Off Command - COMMAND_ONOFF_OFF
+    HAL_TURN_OFF_LED1();
+    zclGeneral_SendOnOff_CmdOff( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+  } 
+}
 
 
 /*********************************************************************

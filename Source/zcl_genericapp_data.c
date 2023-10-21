@@ -208,7 +208,7 @@ SimpleDescriptionFormat_t zclGenericApp_SimpleDesc =
   GENERICAPP_ENDPOINT,                  //  int Endpoint;
   ZCL_HA_PROFILE_ID,                     //  uint16 AppProfId;
   // GENERICAPP_TODO: Replace ZCL_HA_DEVICEID_ON_OFF_LIGHT with application specific device ID
-  ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,  //  uint16 AppDeviceId; 
+  ZCL_HA_DEVICEID_ON_OFF_SWITCH,  //  uint16 AppDeviceId; 
   GENERICAPP_DEVICE_VERSION,            //  int   AppDevVer:4;
   GENERICAPP_FLAGS,                     //  int   AppFlags:4;
   ZCLGENERICAPP_MAX_INCLUSTERS,         //  byte  AppNumInClusters;
@@ -224,7 +224,7 @@ bdbTLDeviceInfo_t tlGenericApp_DeviceInfo =
   GENERICAPP_ENDPOINT,                  //uint8 endpoint;
   ZCL_HA_PROFILE_ID,                    //uint16 profileID;
   // GENERICAPP_TODO: Replace ZCL_HA_DEVICEID_ON_OFF_LIGHT with application specific device ID
-  ZCL_HA_DEVICEID_ON_OFF_LIGHT_SWITCH,  //uint16 deviceID;
+  ZCL_HA_DEVICEID_ON_OFF_SWITCH,  //uint16 deviceID;
   GENERICAPP_DEVICE_VERSION,            //uint8 version;
   GENERICAPP_NUM_GRPS                   //uint8 grpIdCnt;
 };
