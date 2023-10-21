@@ -16,10 +16,10 @@ P2.0:
 When powered on for the first time, the device will connect to the ZigBee network by pressing the switch.
 
 P0.1:
-This will send an 'On' command to ZigBee2MQTT..
+This will send an 'ON' command to ZigBee2MQTT..
 
 P0.1:
-This will send an 'Off' command to ZigBee2MQTT..
+This will send an 'OFF' command to ZigBee2MQTT..
 
 That's it.
 
