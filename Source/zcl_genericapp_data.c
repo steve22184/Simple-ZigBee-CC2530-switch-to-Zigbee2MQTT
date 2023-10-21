@@ -180,8 +180,8 @@ uint8 CONST zclGenericApp_NumAttributes = ( sizeof(zclGenericApp_Attrs) / sizeof
 // specific cluster IDs.
 const cId_t zclGenericApp_InClusterList[] =
 {
-  ZCL_CLUSTER_ID_GEN_BASIC,
-  ZCL_CLUSTER_ID_GEN_IDENTIFY,
+  ZCL_CLUSTER_ID_GEN_BASIC
+  //ZCL_CLUSTER_ID_GEN_IDENTIFY,
   //ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG
   
   // GENERICAPP_TODO: Add application specific Input Clusters Here. 
@@ -193,8 +193,9 @@ const cId_t zclGenericApp_InClusterList[] =
 
 const cId_t zclGenericApp_OutClusterList[] =
 {
-  ZCL_CLUSTER_ID_GEN_IDENTIFY,
-  ZCL_CLUSTER_ID_GEN_ON_OFF,
+  ZCL_CLUSTER_ID_GEN_BASIC,
+  //ZCL_CLUSTER_ID_GEN_IDENTIFY,
+  ZCL_CLUSTER_ID_GEN_ON_OFF
   //ZCL_CLUSTER_ID_GEN_GROUPS,
  
   // GENERICAPP_TODO: Add application specific Output Clusters Here. 
