@@ -10,16 +10,13 @@ It is programmed as an End Device and is intended as a simple platform as starti
 ![IMG2](https://github.com/LemmeDasker/TestZigbee/assets/38005465/5e3acf4f-fb30-45d9-8a93-845ba9567916)
 
 ## Using the device
-You will first have to connect thee switches to pin P2.0, P0.1 and P0.2.
+You will first have to connect two switches to pin P2.0, P0.1. The pins are interrupt enabled.
 
 P2.0:
 When powered on for the first time, the device will connect to the ZigBee network by pressing the switch.
 
 P0.1:
-This will send an 'ON' command to ZigBee2MQTT..
-
-P0.1:
-This will send an 'OFF' command to ZigBee2MQTT..
+When the switch is openend it will send an 'ON' commmand, and when put to GND it will send the 'OFF' command.
 
 That's it.
 
