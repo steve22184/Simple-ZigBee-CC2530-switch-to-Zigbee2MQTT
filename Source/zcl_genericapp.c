@@ -121,6 +121,8 @@ uint8 zclGenericApp_OnOffSwitchActions;
  * LOCAL VARIABLES
  */
 
+bool isToggleSet1 = false;
+
 uint8 giGenAppScreenMode = GENERIC_MAINMODE;   // display the main screen mode first
 
 uint8 gPermitDuration = 0;    // permit joining default to disabled
@@ -313,6 +315,7 @@ void zclGenericApp_Init( byte task_id )
   HalLcdWriteString ( (char *)sDeviceName, HAL_LCD_LINE_3 );
 #endif  // LCD_SUPPORTED
 
+
 bdb_StartCommissioning(BDB_COMMISSIONING_REJOIN_EXISTING_NETWORK_ON_STARTUP);
 }
 
@@ -390,7 +393,6 @@ uint16 zclGenericApp_event_loop( uint8 task_id, uint16 events )
   
   if ( events & GENERICAPP_EVT_1 )
   {
-    // toggle LED 2 state, start another timer for 500ms
 //    HalLedSet ( HAL_LED_2, HAL_LED_MODE_TOGGLE );
 //    osal_start_timerEx( zclGenericApp_TaskID, GENERICAPP_EVT_1, 500 );
     
@@ -434,25 +436,28 @@ static void zclGenericApp_HandleKeys( byte shift, byte keys )
 {
   if ( keys & HAL_KEY_SW_1 )
   {
-    HAL_TOGGLE_LED2();
-  // Start the BDB commissioning method
+    //HAL_TOGGLE_LED1();
+    // Start the BDB commissioning method
     bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING);
   }
   if ( keys & HAL_KEY_SW_6 )
   {
-  // Send switch toggle command
-    //zclGeneral_SendOnOff_CmdToggle( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
-  // Send an On Off Command - COMMAND_ONOFF_ON
-    HAL_TURN_ON_LED1();
-    zclGeneral_SendOnOff_CmdOn( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+      // Send switch on/off command
+    if (isToggleSet1) {
+        //HAL_TURN_ON_LED1();
+        zclGeneral_SendOnOff_CmdOn( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    } else {
+        //HAL_TURN_OFF_LED1();
+        zclGeneral_SendOnOff_CmdOff( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
+    }
+      // Skift tilstanden
+    isToggleSet1 = !isToggleSet1;
   }  
   if ( keys & HAL_KEY_SW_5 )
   {
-  // Send switch toggle command
+    // Send switch toggle command
+    //HAL_TOGGLE_LED1();
     //zclGeneral_SendOnOff_CmdToggle( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
-  // Send an On Off Command - COMMAND_ONOFF_OFF
-    HAL_TURN_OFF_LED1();
-    zclGeneral_SendOnOff_CmdOff( GENERICAPP_ENDPOINT, &zclGenericApp_DstAddr, FALSE, bdb_getZCLFrameCounter() );
   } 
 }
 

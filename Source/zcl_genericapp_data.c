@@ -49,6 +49,7 @@
 #include "zcl.h"
 #include "zcl_general.h"
 #include "zcl_ha.h"
+#include "zcl_genericapp.h"
 
 /* GENERICAPP_TODO: Include any of the header files below to access specific cluster data
 #include "zcl_poll_control.h"
@@ -63,7 +64,6 @@
 #include "zcl_hvac.h"
 */
 
-#include "zcl_genericapp.h"
 
 /*********************************************************************
  * CONSTANTS
@@ -180,8 +180,8 @@ uint8 CONST zclGenericApp_NumAttributes = ( sizeof(zclGenericApp_Attrs) / sizeof
 // specific cluster IDs.
 const cId_t zclGenericApp_InClusterList[] =
 {
-  ZCL_CLUSTER_ID_GEN_BASIC
-  //ZCL_CLUSTER_ID_GEN_IDENTIFY,
+  ZCL_CLUSTER_ID_GEN_BASIC,
+  ZCL_CLUSTER_ID_GEN_IDENTIFY,
   //ZCL_CLUSTER_ID_GEN_ON_OFF_SWITCH_CONFIG
   
   // GENERICAPP_TODO: Add application specific Input Clusters Here. 
@@ -194,7 +194,7 @@ const cId_t zclGenericApp_InClusterList[] =
 const cId_t zclGenericApp_OutClusterList[] =
 {
   ZCL_CLUSTER_ID_GEN_BASIC,
-  //ZCL_CLUSTER_ID_GEN_IDENTIFY,
+  ZCL_CLUSTER_ID_GEN_IDENTIFY,
   ZCL_CLUSTER_ID_GEN_ON_OFF
   //ZCL_CLUSTER_ID_GEN_GROUPS,
  
