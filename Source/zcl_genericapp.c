@@ -259,9 +259,9 @@ void zclGenericApp_Init( byte task_id )
   
     // Set destination address to indirect
     //zclGenericApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
-    zclGenericApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
-    zclGenericApp_DstAddr.endPoint = 1;
-    zclGenericApp_DstAddr.addr.shortAddr = 0;  
+  zclGenericApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+  zclGenericApp_DstAddr.endPoint = GENERICAPP_ENDPOINT;
+  zclGenericApp_DstAddr.addr.shortAddr = 0x0000;
 
   // This app is part of the Home Automation Profile
   bdb_RegisterSimpleDescriptor( &zclGenericApp_SimpleDesc );
@@ -393,6 +393,7 @@ uint16 zclGenericApp_event_loop( uint8 task_id, uint16 events )
   
   if ( events & GENERICAPP_EVT_1 )
   {
+    //NLME_SetPollRate(0);
 //    HalLedSet ( HAL_LED_2, HAL_LED_MODE_TOGGLE );
 //    osal_start_timerEx( zclGenericApp_TaskID, GENERICAPP_EVT_1, 500 );
     
@@ -492,6 +493,7 @@ static void zclGenericApp_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *
       {
         //YOUR JOB:
         //We are on the nwk, what now?
+        //osal_start_timerEx( zclGenericApp_TaskID, GENERICAPP_EVT_1, 10000 );
       }
       else
       {
