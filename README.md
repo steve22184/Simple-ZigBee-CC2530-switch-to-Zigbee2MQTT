@@ -1,4 +1,4 @@
-# Simple-ZigBee-CC2530-switch-to-Zigbee2MQTT
+# CC2530-ZigBee-Wall-Switch-to-Zigbee2MQTT
 Simple ZigBee switch based on TI's CC2530 connecting to Zigbee2MQTT
 
 This is a prototype of a simple switch connecting to Zigbee2MQTT. It is based on a CC2530 from Texas Instruments using Z-Stack 3.0.2 and IAR 10.30 as compiler.
